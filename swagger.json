@@ -1,0 +1,108 @@
+{
+  "swagger": "2.0",
+  "info": {},
+  "paths": {
+    "/recipes": {
+      "get": {
+        "description": "Obtener todas las recetas existentes",
+        "tags": [
+          "recipes"
+        ],
+        "summary": "Obtener lista de recetas",
+        "operationId": "listRecipes"
+      },
+      "post": {
+        "description": "Crear una nueva receta",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "recipes"
+        ],
+        "summary": "Crear una nueva receta",
+        "operationId": "newRecipe",
+        "parameters": [
+          {
+            "description": "Recipe object",
+            "name": "recipe",
+            "in": "body",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/recipes/search": {
+      "get": {
+        "description": "Devuelve una lista de recetas filtradas por una etiqueta",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "recipes"
+        ],
+        "summary": "Buscar recetas por tag",
+        "operationId": "searchRecipes",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Tag to filter by",
+            "name": "tag",
+            "in": "query",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/recipes/{id}": {
+      "put": {
+        "description": "Actualiza una receta existente mediante su ID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "recipes"
+        ],
+        "summary": "Actualizar una receta existente",
+        "operationId": "updateRecipe",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "ID de la receta a actualizar",
+            "name": "id",
+            "in": "path",
+            "required": true
+          },
+          {
+            "description": "Objeto de la receta a actualizar",
+            "name": "recipe",
+            "in": "body",
+            "required": true
+          }
+        ]
+      },
+      "delete": {
+        "description": "Eliminar recetas que coincidan con un ID",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "recipes"
+        ],
+        "summary": "Eliminar receta por ID",
+        "operationId": "deleteRecipe",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "ID of the recipe to delete",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ]
+      }
+    }
+  }
+}
