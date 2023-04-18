@@ -12,8 +12,9 @@ Para ejecutar el proyecto, siga los siguientes pasos:
 
 1. Clone este repositorio en su sistema:
 2. Vaya al directorio del proyecto:
-3. Ejecute el comando `go run main.go` para iniciar la aplicación:
-4. La aplicación se ejecutará en `http://localhost:8080`.
+3. Ejecute el comando `go mod download` para instalar dependencias:
+4. Ejecute el comando `go run main.go` para iniciar la aplicación:
+5. La aplicación se ejecutará en `http://localhost:8080`.
 ## Endpoints
 
 La API expone los siguientes endpoints para interactuar con las recetas:
